@@ -1,0 +1,22 @@
+APPROACH: MNIST Digit Classifier
+
+Project Choice: I used the MNIST dataset for this assignment because it provides a reliable foundation for demonstrating core image processing and AI concepts. The goal was to build a system that moves from raw pixel data to a confident prediction.
+
+1. Data Preparation I used a two-step preprocessing pipeline:
+• Normalization: I scaled the pixel values using the dataset mean (0.1307) and standard deviation (0.3081). This centers the data, which helps the model learn faster and prevents the math from "exploding" during training.
+• Tensors: I converted the images into PyTorch Tensors to allow the model to process 64 images at a time (batching), making it much faster than processing images one by one.
+
+2. The Model (CNN) I chose a Convolutional Neural Network because standard networks often struggle with image spatial patterns.
+• Layers: I used two Convolutional layers (3x3 filters) to find edges and shapes, followed by Max-Pooling to shrink the image size.
+• Final Layers: After extracting features, I flattened the data and passed it through a Dense layer of 128 neurons to make the final decision.
+• Efficiency: The model has about 421,642 parameters, which is powerful enough for 99% accuracy but small enough to run on any standard laptop CPU in seconds.
+
+3. Training Logic * Optimization: I used the Adam optimizer because it automatically handles the learning rate, making it more reliable than basic SGD(Stochastic Gradient Descent).
+• Loss: I used Cross-Entropy Loss, which is the standard for telling the model how far off its "guess" was from the real digit.
+
+4. Results & Persistence The model achieved 99.11% accuracy on unseen test data. I included a visualization script (`predictions.png`) to show the model's confidence and saved the final weights as `model.pth` so the model can be reused without retraining.
+
+5. Real-World Improvements If I were to take this further, my next steps would be:
+• Custom Image Support: Adding a script to resize and grayscale any personal photo to 28x28.
+• Error Handling: Adding checks for dataset download failures or incorrect image dimensions.
+• Device Flexibility: Adding a single line to support GPU acceleration (`cuda`) for larger datasets.
