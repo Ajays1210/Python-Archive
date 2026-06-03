@@ -1,0 +1,6 @@
+ollama
+pymupdf
+pytesseract
+pdf2image
+pillow
+rich

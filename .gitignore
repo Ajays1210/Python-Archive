@@ -1,0 +1,6 @@
+.venv/ 
+.idea/ 
+__pycache__/ 
+*.pyc 
+output/ 
+patient_data/ 
