@@ -591,4 +591,4 @@ etc.
                 json.dump(self.trace, f, indent=2, ensure_ascii=False)
             print(f"\n✅ Trace saved: {output_path}")
         except Exception as e:
-            print(f"\n❌ Could not save trace: {e}")git add "Discharge Summary Agent/agent.py"
+            print(f"\n❌ Could not save trace: {e}")
